@@ -9,11 +9,41 @@ function Property() {
 
   if (!logement) return <div>Logement non trouvé</div>;
 
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < logement.rating) {
+      stars.push(
+        <i
+          key={i}
+          className="fa-solid fa-star"
+          style={{ color: "#ff6060" }}
+        ></i>
+      );
+    } else {
+      stars.push(
+        <i
+          key={i}
+          className="fa-solid fa-star"
+          style={{ color: "#e3e3e3" }}
+        ></i>
+      );
+    }
+  }
+
   return (
     <div>
-      <h1>{logement.title}</h1>
       <img src={logement.cover} alt={logement.title} />
-      {/* Ajoutez ici d'autres détails comme la description, les équipements, etc., selon vos besoins. */}
+      <h1>{logement.title}</h1>
+      <h2>{logement.location}</h2>
+      <div>{stars}</div>
+      <p>Description</p>
+      <p>{logement.description}</p>
+      <p>Equipements</p>
+      <ul>
+        {logement.equipments.map((equipment, id) => (
+          <li key={id}>{equipment}</li>
+        ))}
+      </ul>
     </div>
   );
 }

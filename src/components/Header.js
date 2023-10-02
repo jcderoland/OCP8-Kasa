@@ -17,7 +17,6 @@ function Header() {
           <rect width="1240" height="223" rx="25" fill="black" />
         </g>
       </svg>
-      {/* <img id="homeImage1" src={homeImage1} alt="homeImage1" />; */}
       <h1>Chez vous, partout et ailleurs</h1>
     </header>
   );
