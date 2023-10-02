@@ -1,0 +1,28 @@
+.navbar {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    }
+
+
+.navbar-button {
+    list-style: none;}
+
+.navbar-button a {
+color: #FF6060;
+text-align: right;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 142.6%; 
+text-decoration: none;
+}
+
+

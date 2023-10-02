@@ -1,13 +1,12 @@
 import React from "react";
-import "./styles/Home.scss";
+import Cards from "../components/Cards";
 
-const Home = () => {
+function Home() {
   return (
     <div>
-      <h1>Accueil</h1>
-      <p>Bienvenue sur la page d'accueil!</p>
+      <Cards />
     </div>
   );
-};
+}
 
 export default Home;
