@@ -5,7 +5,12 @@ import headerImage from "../assets/images/homeImage1.png";
 
 function Header() {
   const location = useLocation();
-  if (location.pathname.includes("/property/")) return null;
+  if (
+    location.pathname.includes("/property/") ||
+    location.pathname === "/about"
+  ) {
+    return null;
+  }
 
   return (
     <header>
