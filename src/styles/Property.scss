@@ -14,7 +14,19 @@ h1 , h2 {
 
 .propertyStarsHost {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+}
+
+.propertyHost {
+    display: flex;
+}
+
+.collapse1and2 {
+    display: flex;
+}
+
+.collapseBtn {
+    display: flex;
 }
 
 .collapseContent1 {
@@ -33,3 +45,12 @@ h1 , h2 {
 
     &.active {
         max-height: 100px; }}
+.collapseContent1,
+.collapseContent2 {
+    display: none;
+}
+
+.collapseContent1.active,
+.collapseContent2.active {
+    display: block;
+}

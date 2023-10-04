@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
 import "../styles/Property.scss";
@@ -7,26 +7,8 @@ function Property() {
   const { id } = useParams();
   const logement = logements.find((log) => log.id.toString() === id);
 
-  useEffect(() => {
-    const collapseBtn1 = document.querySelector(".collapseBtn1");
-    const collapseContent1 = document.querySelector(".collapseContent1");
-    const collapseBtn2 = document.querySelector(".collapseBtn2");
-    const collapseContent2 = document.querySelector(".collapseContent2");
-
-    if (collapseBtn1 && collapseContent1) {
-      collapseBtn1.addEventListener("click", () => {
-        console.log("CollapseBtn1 clicked");
-        collapseContent1.classList.toggle("active");
-      });
-    }
-
-    if (collapseBtn2 && collapseContent2) {
-      collapseBtn2.addEventListener("click", () => {
-        console.log("CollapseBtn2 clicked");
-        collapseContent2.classList.toggle("active");
-      });
-    }
-  }, []);
+  const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
+  const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
 
   if (!logement) return <div>Logement non trouvé</div>;
 
@@ -66,18 +48,44 @@ function Property() {
         </div>
         <div className="propertyStarsHost">
           <p>{stars}</p>
-          <p>{logement.host.name}</p>
-          <img src={logement.host.picture} alt={logement.host.name} />
+          <div className="propertyHost">
+            <h2>{logement.host.name}</h2>
+            <img src={logement.host.picture} alt={logement.host.name} />
+          </div>
         </div>
       </div>
-      <button className="collapseBtn1">Description</button>
-      <p className="collapseContent1">{logement.description}</p>
-      <button className="collapseBtn2">Equipements</button>
-      <ul className="collapseContent2">
-        {logement.equipments.map((equipment, id) => (
-          <li key={id}>{equipment}</li>
-        ))}
-      </ul>
+      <div className="collapse1and2">
+        <div className="collapseBtn&Content">
+          <button
+            className="collapseBtn1"
+            onClick={() => setDescriptionVisibility((prev) => !prev)}
+          >
+            Description
+          </button>
+          <p
+            className={`collapseContent1 ${
+              isDescriptionVisible ? "active" : ""
+            }`}
+          >
+            {logement.description}
+          </p>
+        </div>
+        <div className="collapseBtn&Content">
+          <button
+            className="collapseBtn2"
+            onClick={() => setEquipmentVisibility((prev) => !prev)}
+          >
+            Équipements
+          </button>
+          <ul
+            className={`collapseContent2 ${isEquipmentVisible ? "active" : ""}`}
+          >
+            {logement.equipments.map((equipment, id) => (
+              <li key={id}>{equipment}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
