@@ -9,7 +9,7 @@ function Property() {
 
   const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
   const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // État pour suivre l'image actuellement affichée
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!logement) return <div>Logement non trouvé</div>;
 
@@ -46,7 +46,7 @@ function Property() {
             )
           }
         >
-          Précédent
+          <i class icon="fa-solid fa-less-than" />
         </button>
         <img
           src={logement.pictures[currentImageIndex]}
@@ -59,7 +59,7 @@ function Property() {
             )
           }
         >
-          Suivant
+          <i class="fa-solid fa-greater-than"></i>
         </button>
       </div>
 
