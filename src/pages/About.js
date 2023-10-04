@@ -9,7 +9,7 @@ const About = () => {
   const [isSection4Visible, setSection4Visibility] = useState(false);
 
   return (
-    <div>
+    <div className="aboutSection">
       <img src={aboutImage} alt="aboutImage" className="aboutImage" />
       <div
         className="toggleBar"
