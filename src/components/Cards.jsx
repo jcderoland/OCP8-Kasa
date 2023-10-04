@@ -9,12 +9,13 @@ function Cards() {
 
   return (
     <div className="cards-container">
-      {selectedData.map((card, id) => (
-        <Link key={id} to={`/property/${card.id}`} className="card">
-          <img src={card.cover} alt={card.title} />
-          <h3>{card.title}</h3>
-        </Link>
-      ))}
+{selectedData.map((card) => (
+    <Link key={card.id} to={`/property/${card.id}`} className="card">
+        <img src={card.cover} alt={card.title} />
+        <h3>{card.title}</h3>
+    </Link>
+))}
+
     </div>
   );
 }

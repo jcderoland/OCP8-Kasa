@@ -13,30 +13,18 @@ function Property() {
 
   if (!logement) return <div>Logement non trouvé</div>;
 
-  const stars = [];
-  for (let i = 0; i < 5; i++) {
-    if (i < logement.rating) {
-      stars.push(
-        <i
-          key={i}
-          className="fa-solid fa-star"
-          style={{ color: "#ff6060" }}
-        ></i>
-      );
-    } else {
-      stars.push(
-        <i
-          key={i}
-          className="fa-solid fa-star"
-          style={{ color: "#e3e3e3" }}
-        ></i>
-      );
-    }
-  }
+  const stars = Array.from({ length: 5 }).map((_, i) => (
+    <i
+        key={i}
+        className="fa-solid fa-star"
+        style={{ color: i < logement.rating ? "#ff6060" : "#e3e3e3" }}
+    ></i>
+));
+
 
   return (
     <div>
-      {/* Carrousel d'images */}
+      {/* Image carousel */}
       <div className="imageCarrousel">
         <button
           onClick={() =>
