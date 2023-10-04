@@ -9,6 +9,7 @@ function Property() {
 
   const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
   const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // État pour suivre l'image actuellement affichée
 
   if (!logement) return <div>Logement non trouvé</div>;
 
@@ -35,7 +36,33 @@ function Property() {
 
   return (
     <div>
-      <img src={logement.cover} alt={logement.title} />
+      {/* Carrousel d'images */}
+      <div className="imageCarrousel">
+        <button
+          onClick={() =>
+            setCurrentImageIndex(
+              (prev) =>
+                (prev - 1 + logement.pictures.length) % logement.pictures.length
+            )
+          }
+        >
+          Précédent
+        </button>
+        <img
+          src={logement.pictures[currentImageIndex]}
+          alt={`Image ${currentImageIndex + 1}`}
+        />
+        <button
+          onClick={() =>
+            setCurrentImageIndex(
+              (prev) => (prev + 1) % logement.pictures.length
+            )
+          }
+        >
+          Suivant
+        </button>
+      </div>
+
       <div className="propertyTitleToHost">
         <div className="propertyTitleLocationTags">
           <h1>{logement.title}</h1>
