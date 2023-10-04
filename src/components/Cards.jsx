@@ -4,7 +4,10 @@ import "../styles/Cards.scss";
 import cardsData from "../data/logements.json";
 
 function Cards() {
+  // Shuffle the cards data randomly
   const shuffledData = cardsData.sort(() => 0.5 - Math.random());
+
+   // Select the first 6 shuffled cards
   const selectedData = shuffledData.slice(0, 6);
 
   return (

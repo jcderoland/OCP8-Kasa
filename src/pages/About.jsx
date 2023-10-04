@@ -3,6 +3,7 @@ import "../styles/About.scss";
 import aboutImage from "../assets/images/aboutImage1.png";
 
 const About = () => {
+  // State management for visibility of different sections
   const [isSection1Visible, setSection1Visibility] = useState(false);
   const [isSection2Visible, setSection2Visibility] = useState(false);
   const [isSection3Visible, setSection3Visibility] = useState(false);

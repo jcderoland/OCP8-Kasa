@@ -10,16 +10,16 @@ import Navbar from "./Navbar";
 
 function RouterComponent() {
   return (
-    <Router>
-      <Navbar />
-      <Header />
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/property/:id" element={<Property />} />
-        <Route path="*" element={<Error />} />
+  <Router>
+      <Navbar />  {/* Navigation bar component */}
+      <Header />  {/* Header component */}
+      <Routes>  {/* Define application routes */}
+      <Route index path="/" element={<Home />} />  {/* Home route (default route) */}
+      <Route path="/about" element={<About />} />  {/* About page route */}
+      <Route path="/property/:id" element={<Property />} /> {/* Property details route */}
+      <Route path="*" element={<Error />} /> {/* Fallback error route for unmatched paths */}
       </Routes>
-      <Footer />
+      <Footer />  {/* Footer component */}
     </Router>
   );
 }

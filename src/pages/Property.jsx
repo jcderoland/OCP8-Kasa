@@ -4,15 +4,21 @@ import logements from "../data/logements.json";
 import "../styles/Property.scss";
 
 function Property() {
+  // Extract property ID from route parameters
   const { id } = useParams();
+
+  // Find the specific property using the ID
   const logement = logements.find((log) => log.id.toString() === id);
 
+  // State management for visibility of description, equipment, and current image index
   const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
   const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Display message if property is not found
   if (!logement) return <div>Logement non trouvé</div>;
 
+  // Generate star ratings based on property rating
   const stars = Array.from({ length: 5 }).map((_, i) => (
     <i
         key={i}

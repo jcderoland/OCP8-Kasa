@@ -5,6 +5,7 @@ import "../styles/Navbar.scss";
 const Navbar = () => {
   return (
     <nav className="navbar">
+      {/* SVG logo for the navigation bar */}
       <svg
         className="logo-kasa-navbar"
         width="211"

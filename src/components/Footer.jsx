@@ -4,6 +4,7 @@ import "../styles/Footer.scss";
 function Footer() {
   return (
     <footer>
+      {/*SVG logo for the footer*/}
       <svg
         width="122"
         height="40"
