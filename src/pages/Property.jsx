@@ -39,8 +39,8 @@ function Property() {
                 (prev - 1 + logement.pictures.length) % logement.pictures.length
             )
           }
-        >
-          <i class icon="fa-solid fa-less-than" />
+          >
+          <i class="fa-solid fa-less-than"></i>
         </button>
         <img
           src={logement.pictures[currentImageIndex]}
@@ -61,28 +61,32 @@ function Property() {
         <div className="propertyTitleLocationTags">
           <h1>{logement.title}</h1>
           <h2>{logement.location}</h2>
-          <ul>
+          <ul className="propertyTags">
             {logement.tags.map((tag, id) => (
               <li key={id}>{tag}</li>
             ))}
           </ul>
         </div>
         <div className="propertyStarsHost">
-          <p>{stars}</p>
+          <p className="stars">{stars}</p>
           <div className="propertyHost">
-            <h2>{logement.host.name}</h2>
+            <h2 className="host">{logement.host.name}</h2>
             <img src={logement.host.picture} alt={logement.host.name} />
           </div>
         </div>
       </div>
       <div className="collapse1and2">
         <div className="collapseBtn&Content">
+          <div className="toggleBar2" onClick={() => setDescriptionVisibility((prev) => !prev)}>
           <button
             className="collapseBtn1"
-            onClick={() => setDescriptionVisibility((prev) => !prev)}
           >
             Description
           </button>
+          <p className="toggleArrow">
+          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
+        </p>
+        </div>
           <p
             className={`collapseContent1 ${
               isDescriptionVisible ? "active" : ""
@@ -92,12 +96,17 @@ function Property() {
           </p>
         </div>
         <div className="collapseBtn&Content">
+        <div className="toggleBar2" onClick={() => setEquipmentVisibility((prev) => !prev)}>
           <button
             className="collapseBtn2"
-            onClick={() => setEquipmentVisibility((prev) => !prev)}
+            
           >
-            Équipements
+            Équipements 
           </button>
+          <p className="toggleArrow">
+          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
+        </p>
+        </div>
           <ul
             className={`collapseContent2 ${isEquipmentVisible ? "active" : ""}`}
           >

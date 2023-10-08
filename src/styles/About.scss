@@ -18,11 +18,11 @@ justify-content: center;
     justify-content: space-between;
     align-items: center;
     width: 70vw;
+    height: 40px;
     cursor: pointer;
     background-color: #FF6060;
     padding: 5px;
     border-radius: 5px;
-    margin: 15px 0;
     color: white;
     font-size: 1.5rem;
     line-height: 0.1rem;
@@ -39,29 +39,34 @@ justify-content: center;
     
 }
 
-.toggleContent {
-    max-height: 0;
-    width: 70vw;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    padding: 0 10px;
+// .toggleContent {
+//     max-height: 0;
+//     width: 70vw;
+//     overflow: hidden;
+//     transition: max-height 0.5s ease-in-out;
+//     padding: 0 10px;
     
-    &.active {
-        max-height: 400px;
-        padding: 10px;
-    }
-}
+//     &.active {
+//         max-height: 400px;
+//         padding: 10px;
+//     }
+// }
 
 .toggleContent1,
 .toggleContent2,
 .toggleContent3,
 .toggleContent4 {
-    display: none;
+    max-height: 0;
+    width: 70vw;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0 10px;
 }
 
 .toggleContent1.active,
 .toggleContent2.active,
 .toggleContent3.active,
 .toggleContent4.active {
-    display: block;
+    max-height: 400px;
+        padding: 10px;
 }
