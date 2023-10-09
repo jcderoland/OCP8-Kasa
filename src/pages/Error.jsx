@@ -3,7 +3,7 @@ import "../styles/Error.scss";
 
 const Error = () => {
   return (
-    <div>
+    <div className="errorMessage">
       {/* Display 404 error message */}
       <h1>Erreur 404</h1>
       <p>La page que vous cherchez n'existe pas.</p>

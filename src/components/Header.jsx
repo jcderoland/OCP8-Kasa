@@ -7,11 +7,8 @@ function Header() {
   // Get the current route location
   const location = useLocation();
 
-  // Hide the header for specific routes (property details and about page)
-  if (
-    location.pathname.includes("/property/") ||
-    location.pathname === "/about"
-  ) {
+  // Show the header only for the home page
+  if (location.pathname !== "/") {
     return null;
   }
 

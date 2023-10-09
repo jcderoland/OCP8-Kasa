@@ -16,7 +16,7 @@ function Property() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Display message if property is not found
-  if (!logement) return <div>Logement non trouvé</div>;
+  if (!logement) return <h1 className="logementNotFound">Logement non trouvé</h1>;
 
   // Generate star ratings based on property rating
   const stars = Array.from({ length: 5 }).map((_, i) => (
