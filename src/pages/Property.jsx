@@ -15,22 +15,24 @@ function Property() {
     const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+
+    // Slideshow effect in carousel
     useEffect(() => {
       // Only set the interval if 'logement' exists
       if (logement) {
           const interval = setInterval(() => {
-              // Step 1: Set image opacity to 0
+              // Set image opacity to 0
               const imgElement = document.querySelector('.imageCarrousel img');
               if (imgElement) imgElement.style.opacity = 0;
   
-              // Step 2: Change the image index after the transition duration
+              // Change the image index after the transition duration
               setTimeout(() => {
                   setCurrentImageIndex(prev => (prev + 1) % logement.pictures.length);
   
-                  // Step 3: Set image opacity back to 1
+                  // Set image opacity back to 1
                   if (imgElement) imgElement.style.opacity = 1;
-              }, 300);  // This delay should match the transition duration in SCSS
-          }, 4000);  // This interval should be greater than the transition duration to allow the transition to complete
+              }, 300);  
+          }, 4000); 
   
           return () => clearInterval(interval);
       }
