@@ -17,7 +17,7 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 70vw;
+    width: 71vw;
     height: 40px;
     cursor: pointer;
     background-color: #FF6060;
@@ -26,6 +26,7 @@ justify-content: center;
     color: white;
     font-size: 1.5rem;
     line-height: 0.1rem;
+
 
     &:hover {
         background-color: #e3e3e3;
@@ -47,14 +48,17 @@ justify-content: center;
     max-height: 0;
     width: 70vw;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-    padding: 0 10px;
+    transition: max-height 0.3s ease-in-out;
+    color: #FF6060;
+    background-color: #F6F6F6;
+    margin: 0 0 20px 0;
 }
 
 .toggleContent1.active,
 .toggleContent2.active,
 .toggleContent3.active,
 .toggleContent4.active {
-    max-height: 400px;
-        padding: 10px;
+    max-height: 500px;
+    padding: 10px;
+    margin: 0 0 20px 0;
 }

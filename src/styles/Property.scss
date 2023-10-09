@@ -26,7 +26,7 @@
     height: 400px;
     border-radius: 25px;
     object-fit: cover;
-   }
+}
 
 h1 , h2 {
     color: #FF6060;
@@ -45,22 +45,19 @@ h1 , h2 {
 }
 
 .propertyTags {
-display: flex;
-list-style: none;
-padding: 0;
+    display: flex;
+    list-style: none;
+    padding: 0;
 
-
-  & li {
-    color: white;
-    padding: 7px 25px;
-    margin-right: 10px;
-    background-color: #FF6060 ;
-    border-radius: 15px;
-    cursor: pointer;
-  }
-
+    & li {
+        color: white;
+        padding: 7px 25px;
+        margin-right: 10px;
+        background-color: #FF6060;
+        border-radius: 15px;
+        cursor: pointer;
+    }
 }
-
 
 .propertyStarsHost {
     display: flex;
@@ -76,11 +73,8 @@ padding: 0;
     }
 }
 
-
-
-
 .host {
-    width: 80px;
+    width: 100px;
 }
 
 .stars {
@@ -97,60 +91,32 @@ padding: 0;
     }
 }
 
+
 .collapse1and2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    }
+}
 
+.collapseBtn1, .collapseBtn2, .collapseContent1, .collapseContent2 {
+    box-sizing: border-box;
+}
 
 .collapseBtn1 , .collapseBtn2 {
     display: flex;
     border: none;
-    background-color:#FF6060;
+    background-color: #FF6060;
     color: white;
     font-size: 1.5rem;
     padding: 5px;
-    margin: 10px ;
-    width: 37vw;
+    max-width: 37vw;
     text-align: center;
     border-radius: 15px;
     cursor: pointer;
 
     @media screen and (max-width:900px) {
-        width: 80vw;
+        max-width: 83vw;
     }
-}
-
-.collapseContent1 {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    width: 35vw;
-    
-    &.active {
-    max-height: 100px; }}
-
-    
-.collapseContent2 {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-    width: 35vw;
-
-    &.active {
-        max-height: 100px; }}
-.collapseContent1,
-.collapseContent2 {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out; 
-    width: 35vw;
-}
-
-.collapseContent1.active,
-.collapseContent2.active {
-    max-height: 600px;
 }
 
 .toggleBar2 {
@@ -161,10 +127,39 @@ padding: 0;
     background-color: #FF6060;
     padding: 10px;
     border-radius: 5px;
-    margin: 15px 0 35px 0;
+    margin: 15px 0 0 0;
     color: white;
     line-height: 0.1rem;
     height: 50px;
+}
+
+.collapseContent1,
+.collapseContent2 {
+    box-sizing: border-box;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    color: #FF6060;
+    background-color: #F6F6F6;
+    text-align: left;
+    width: 41vw;
+    margin: 0 0 15px 0;
+
+    @media screen and (max-width:900px) {
+        width: 89vw;
+    }
+    
+    &.active {
+        padding: 20px 0;
+        max-height: 200px;
+    }
+}
+
+.logementNotFound {
+    text-align: center;
+    padding: 100px;
+    font-size: 2rem;
 }
 
 .logementNotFound {

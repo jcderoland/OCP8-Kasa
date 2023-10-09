@@ -42,10 +42,7 @@ function Property() {
           >
           <i class="fa-solid fa-less-than"></i>
         </button>
-        <img
-          src={logement.pictures[currentImageIndex]}
-          alt={`Image ${currentImageIndex + 1}`}
-        />
+        <img src={logement.pictures[currentImageIndex]} alt={`Logement ${currentImageIndex + 1}`} />
         <button
           onClick={() =>
             setCurrentImageIndex(
