@@ -9,6 +9,12 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 function RouterComponent() {
+
+  // Check if the URL contains a hash, if not redirect to the hashed version
+  if (!window.location.hash) {
+    window.location.href = window.location.href + "#/";
+  }
+
   return (
   <Router>
       <Navbar />  {/* Navigation bar component */}

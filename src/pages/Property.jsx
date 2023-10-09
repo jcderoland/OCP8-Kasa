@@ -1,19 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
 import "../styles/Property.scss";
 
 function Property() {
-  // Extract property ID from route parameters
-  const { id } = useParams();
+    // Extract property ID from route parameters
+    const { id } = useParams();
 
-  // Find the specific property using the ID
-  const logement = logements.find((log) => log.id.toString() === id);
+    // Find the specific property using the ID
+    const logement = logements.find((log) => log.id.toString() === id);
 
-  // State management for visibility of description, equipment, and current image index
-  const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
-  const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    // State management for visibility of description, equipment, and current image index
+    const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
+    const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+      // Only set the interval if 'logement' exists
+      if (logement) {
+          const interval = setInterval(() => {
+              // Step 1: Set image opacity to 0
+              const imgElement = document.querySelector('.imageCarrousel img');
+              if (imgElement) imgElement.style.opacity = 0;
+  
+              // Step 2: Change the image index after the transition duration
+              setTimeout(() => {
+                  setCurrentImageIndex(prev => (prev + 1) % logement.pictures.length);
+  
+                  // Step 3: Set image opacity back to 1
+                  if (imgElement) imgElement.style.opacity = 1;
+              }, 300);  // This delay should match the transition duration in SCSS
+          }, 4000);  // This interval should be greater than the transition duration to allow the transition to complete
+  
+          return () => clearInterval(interval);
+      }
+  }, [logement]);
 
   // Display message if property is not found
   if (!logement) return <h1 className="logementNotFound">Logement non trouvé</h1>;
@@ -26,6 +47,7 @@ function Property() {
         style={{ color: i < logement.rating ? "#ff6060" : "#e3e3e3" }}
     ></i>
 ));
+
 
 
   return (

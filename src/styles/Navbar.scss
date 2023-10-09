@@ -1,13 +1,12 @@
 .navbar {
 display: flex;
 justify-content: space-between;
-flex-wrap: wrap;
 }
 
 .navbar ul {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5vw;
+     gap: 5vw;
+     padding-left: 10px;
     }
 
 
@@ -15,6 +14,7 @@ flex-wrap: wrap;
     list-style: none;}
 
 .navbar-button a {
+    white-space: nowrap;
 color: #FF6060;
 text-align: right;
 font-family: Montserrat;
@@ -23,6 +23,10 @@ font-style: normal;
 font-weight: 500;
 line-height: 142.6%; 
 text-decoration: none;
+
+@media screen and (max-width: 800px) {
+    font-size: 1.1rem;
+}
 }
 
 

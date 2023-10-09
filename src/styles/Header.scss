@@ -4,6 +4,10 @@ header {
     position: relative;
     border-radius: 15px;
     padding: 30px;
+
+    @media screen and (max-width: 800px) {
+        padding-bottom: 0;
+    }
     }
 
 .headerImage {
@@ -13,6 +17,10 @@ header {
     object-fit: cover;
     opacity: 0.7;
     filter: brightness(50%); 
+
+    @media screen and (max-width: 800px) {
+        height: 150px;
+    }
 }
 
 header h1 {
@@ -25,4 +33,13 @@ header h1 {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 800px) {
+    font-size: 1.5rem;
+    top: 50%;
+    left: 40%;
+    // transform: translate(-50%, -50%);
+
+    }
+
         }
