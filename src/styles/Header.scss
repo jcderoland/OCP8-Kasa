@@ -6,7 +6,7 @@ header {
     padding: 30px;
 
     @media screen and (max-width: 800px) {
-        padding-bottom: 0;
+        padding: 15px 15px 0 15px;
     }
     }
 
@@ -19,7 +19,7 @@ header {
     filter: brightness(50%); 
 
     @media screen and (max-width: 800px) {
-        height: 150px;
+        height: 100px;
     }
 }
 
