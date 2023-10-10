@@ -28,9 +28,6 @@ justify-content: center;
     line-height: 0.1rem;
 
 
-    &:hover {
-        background-color: #e3e3e3;
-    }
 }
 
 
@@ -39,6 +36,15 @@ justify-content: center;
     line-height: 0.1rem;
     
 }
+
+.toggleArrow .fa-solid {
+    transition: transform 0.5s ease-in-out;
+}
+
+.toggleArrow .fa-solid.rotated {
+    transform: rotate(-180deg);
+}
+
 
 
 .toggleContent1,
@@ -60,5 +66,5 @@ justify-content: center;
 .toggleContent3.active,
 .toggleContent4.active {
     max-height: 500px;
-    padding: 10px;
+    padding: 15px;
 }

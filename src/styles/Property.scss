@@ -99,6 +99,13 @@ h1 , h2 {
     }
 }
 
+.toggleArrow .fa-solid {
+    transition: transform 0.5s ease-in-out;
+}
+
+.toggleArrow .fa-solid.rotated {
+    transform: rotate(-180deg);
+}
 
 .collapse1and2 {
     display: flex;
@@ -162,12 +169,6 @@ h1 , h2 {
         padding: 20px 0;
         max-height: 200px;
     }
-}
-
-.logementNotFound {
-    text-align: center;
-    padding: 100px;
-    font-size: 2rem;
 }
 
 .logementNotFound {

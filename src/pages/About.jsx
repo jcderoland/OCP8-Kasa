@@ -18,8 +18,8 @@ const About = () => {
       >
         <h3>Fiabilité</h3>
         <p className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </p>
+    <i className={`fa-solid fa-angle-up ${isSection1Visible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
       </div>
       <p
         className={`toggleContent toggleContent1 ${
@@ -36,8 +36,8 @@ const About = () => {
       >
         <h3>Respect</h3>
         <p className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </p>
+    <i className={`fa-solid fa-angle-up ${isSection2Visible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
       </div>
       <p
         className={`toggleContent toggleContent2 ${
@@ -54,8 +54,8 @@ const About = () => {
       >
         <h3>Service</h3>
         <p className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </p>
+    <i className={`fa-solid fa-angle-up ${isSection3Visible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
       </div>
       <p
         className={`toggleContent toggleContent3 ${
@@ -71,9 +71,9 @@ const About = () => {
         onClick={() => setSection4Visibility((prev) => !prev)}
       >
         <h3>Sécurité</h3>
-        <h3 className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </h3>
+        <p className="toggleArrow">
+    <i className={`fa-solid fa-angle-up ${isSection4Visible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
       </div>
       <p
         className={`toggleContent toggleContent4 ${

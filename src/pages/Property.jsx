@@ -105,8 +105,8 @@ function Property() {
             Description
           </button>
           <p className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </p>
+    <i className={`fa-solid fa-angle-up ${isDescriptionVisible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
         </div>
           <p
             className={`collapseContent1 ${
@@ -125,8 +125,8 @@ function Property() {
             Équipements 
           </button>
           <p className="toggleArrow">
-          <i className="fa-solid fa-angle-up" style={{ color: "#ffffff" }}></i>
-        </p>
+    <i className={`fa-solid fa-angle-up ${isEquipmentVisible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
+</p>
         </div>
           <ul
             className={`collapseContent2 ${isEquipmentVisible ? "active" : ""}`}
