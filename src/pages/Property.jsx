@@ -32,7 +32,7 @@ function Property() {
                   // Set image opacity back to 1
                   if (imgElement) imgElement.style.opacity = 1;
               }, 300);  
-          }, 4000); 
+          }, 4500); 
   
           return () => clearInterval(interval);
       }
@@ -56,27 +56,33 @@ function Property() {
     <div>
       {/* Image carousel */}
       <div className="imageCarrousel">
-        <button
-          onClick={() =>
-            setCurrentImageIndex(
-              (prev) =>
-                (prev - 1 + logement.pictures.length) % logement.pictures.length
-            )
-          }
-          >
-          <i class="fa-solid fa-less-than"></i>
-        </button>
-        <img src={logement.pictures[currentImageIndex]} alt={`Logement ${currentImageIndex + 1}`} />
-        <button
-          onClick={() =>
-            setCurrentImageIndex(
-              (prev) => (prev + 1) % logement.pictures.length
-            )
-          }
-        >
-          <i class="fa-solid fa-greater-than"></i>
-        </button>
-      </div>
+    <img src={logement.pictures[currentImageIndex]} alt={`Logement ${currentImageIndex + 1}`} />
+    
+    {logement.pictures.length > 1 && (
+        <>
+            <button
+                onClick={() =>
+                    setCurrentImageIndex(
+                        (prev) =>
+                            (prev - 1 + logement.pictures.length) % logement.pictures.length
+                    )
+                }
+            >
+                <i className="fa-solid fa-less-than"></i>
+            </button>
+            <button
+                onClick={() =>
+                    setCurrentImageIndex(
+                        (prev) => (prev + 1) % logement.pictures.length
+                    )
+                }
+            >
+                <i className="fa-solid fa-greater-than"></i>
+            </button>
+            <p className="imageIndex">{currentImageIndex + 1}/{logement.pictures.length}</p>
+        </>
+    )}
+</div>
 
       <div className="propertyTitleToHost">
         <div className="propertyTitleLocationTags">
