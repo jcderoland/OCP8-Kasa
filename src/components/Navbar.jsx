@@ -6,6 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* SVG logo for the navigation bar */}
+      <Link to="/">
       <svg
         className="logo-kasa-navbar"
         width="211"
@@ -35,7 +36,7 @@ const Navbar = () => {
           fill="#FF6060"
         />
       </svg>
-
+      </Link>
       <ul>
         <li className="navbar-button">
           <Link to="/">Accueil</Link>
