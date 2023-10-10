@@ -31,7 +31,7 @@ function Property() {
   
                   // Set image opacity back to 1
                   if (imgElement) imgElement.style.opacity = 1;
-              }, 300);  
+              }, 1000);  
           }, 4500); 
   
           return () => clearInterval(interval);
