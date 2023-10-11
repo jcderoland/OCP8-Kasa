@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "../styles/About.scss";
 import aboutImage from "../assets/images/aboutImage1.png";
 
 const About = () => {
+
+    // Update page title
+    useEffect(() => { document.title = "Kasa - À propos";
+      }, []);
+
   // State management for visibility of different sections
   const [isSection1Visible, setSection1Visibility] = useState(false);
   const [isSection2Visible, setSection2Visibility] = useState(false);

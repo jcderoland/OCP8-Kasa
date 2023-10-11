@@ -3,7 +3,11 @@ import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
 import "../styles/Property.scss";
 
+
+
 function Property() {
+
+
     // Extract property ID from route parameters
     const { id } = useParams();
 
@@ -38,8 +42,18 @@ function Property() {
       }
   }, [logement]);
 
+    // Update page title
+      useEffect(() => {
+        if (logement) {
+            document.title = "Kasa - " + logement.title;
+        } else {
+            document.title = "Logement non trouvé";
+        }
+    }, [logement]);
+
   // Display message if property is not found
   if (!logement) return <h1 className="logementNotFound">Logement non trouvé</h1>;
+
 
   // Generate star ratings based on property rating
   const stars = Array.from({ length: 5 }).map((_, i) => (
@@ -82,6 +96,8 @@ function Property() {
             <p className="imageIndex">{currentImageIndex + 1}/{logement.pictures.length}</p>
         </>
     )}
+
+    
 </div>
 
       <div className="propertyTitleToHost">

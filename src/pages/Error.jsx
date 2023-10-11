@@ -1,8 +1,14 @@
 import React from "react";
 import "../styles/Error.scss";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Error = () => {
+
+  // Update page title
+    useEffect(() => { document.title = "Kasa - Erreur 404";
+      }, []);
+
   return (
     <div className="errorMessage">
       {/* Display 404 error message */}
