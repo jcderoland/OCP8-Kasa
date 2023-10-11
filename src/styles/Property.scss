@@ -20,7 +20,7 @@
         right: 5%;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 600px) {
         font-size: 3rem;
     }
 }
@@ -79,7 +79,7 @@ h1 , h2 {
     justify-content: center;
     flex-grow: 1;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1000px) {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
