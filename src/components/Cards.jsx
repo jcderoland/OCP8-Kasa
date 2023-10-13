@@ -19,7 +19,7 @@ function Cards() {
     </Link>
 ))}
 
-    </div>
+    </div> 
   );
 }
 

@@ -36,7 +36,7 @@ const Navbar = () => {
           fill="#FF6060"
         />
       </svg>
-      </Link>
+</Link>
       <ul>
         <li className="navbar-button">
           <Link to="/">Accueil</Link>
