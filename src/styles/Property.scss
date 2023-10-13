@@ -39,6 +39,9 @@
     position: absolute;
     top: 80%;
     left: 50%;
+    @media screen and (max-width: 600px) {
+        visibility: hidden;
+    }
 }
 
 h1 , h2 {
