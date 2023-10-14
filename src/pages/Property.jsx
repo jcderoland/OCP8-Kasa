@@ -118,7 +118,8 @@ function Property() {
         </div>
       </div>
 
-<div className="collapse1and2">
+      <div className="collapse1and2" style={{ display: 'flex', flexDirection: 'row' }}>
+
   <Collapse 
     title="Description" 
     content={logement.description} 

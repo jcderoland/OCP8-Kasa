@@ -30,7 +30,7 @@ justify-content: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 71vw;
+    width: 80vw;
     height: 40px;
     cursor: pointer;
     background-color: #FF6060;
@@ -42,6 +42,25 @@ justify-content: center;
 
 
 }
+
+.collapseContent {
+    max-height: 0;
+    width: 80vw;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, 
+    padding 0.5s ease-in-out;
+    color: #FF6060;
+    background-color: #F6F6F6;
+    margin: 0 0 20px 0;
+}
+
+.collapseContent.active,
+{
+    max-height: 500px;
+    padding: 15px;
+}
+
 
 
 .toggleArrow {
@@ -60,20 +79,3 @@ justify-content: center;
 
 
 
-.collapseContent {
-    max-height: 0;
-    width: 70vw;
-    padding: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, 
-    padding 0.5s ease-in-out;
-    color: #FF6060;
-    background-color: #F6F6F6;
-    margin: 0 0 20px 0;
-}
-
-.collapseContent.active,
-{
-    max-height: 500px;
-    padding: 15px;
-}

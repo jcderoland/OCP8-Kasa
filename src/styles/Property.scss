@@ -81,6 +81,7 @@ h1 , h2 {
     align-items: flex-end;
     justify-content: center;
     flex-grow: 1;
+    margin-bottom: 30px;
 
     @media screen and (max-width: 1000px) {
         flex-direction: row;
@@ -117,67 +118,25 @@ h1 , h2 {
 
 .collapse1and2 {
     display: flex;
+    flex-direction: row;  
     justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.collapseBtn1, .collapseBtn2, .collapseContent1, .collapseContent2 {
-    box-sizing: border-box;
-}
-
-.collapseBtn1 , .collapseBtn2 {
-    display: flex;
-    border: none;
-    background-color: #FF6060;
-    color: white;
-    font-size: 1.5rem;
-    padding: 5px;
-    max-width: 37vw;
-    text-align: center;
-    border-radius: 15px;
-    cursor: pointer;
-
-    @media screen and (max-width:900px) {
-        max-width: 83vw;
-    }
-}
-
-.toggleBar2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    background-color: #FF6060;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 15px 0 0 0;
-    color: white;
-    line-height: 0.1rem;
-    height: 50px;
-}
-
-.collapseContent1,
-.collapseContent2 {
-    box-sizing: border-box;
-    max-height: 0;
-    padding: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-    color: #FF6060;
-    background-color: #F6F6F6;
-    text-align: left;
-    width: 41vw;
-    margin: 0 0 15px 0;
-
-    @media screen and (max-width:900px) {
-        width: 89vw;
-    }
     
-    &.active {
-        padding: 20px 0;
-        max-height: 200px;
+@media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+
+    & div {
+        max-width: 40vw;
+        @media screen and (max-width: 600px) {
+            max-width: 80vw;
+            }
     }
 }
+
+
 
 .logementNotFound {
     text-align: center;
