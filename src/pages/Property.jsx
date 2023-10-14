@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
 import "../styles/Property.scss";
 import { Collapse } from "../components/Collapse";
-
+import Carousel from '../components/Carousel';
 
 
 function Property() {
-
 
     // Extract property ID from route parameters
     const { id } = useParams();
@@ -15,31 +14,6 @@ function Property() {
     // Find the specific property using the ID
     const logement = logements.find((log) => log.id.toString() === id);
 
-    // State management for visibility of description, equipment, and current image index
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-
-    // Slideshow effect in carousel
-    useEffect(() => {
-      // Only set the interval if 'logement' exists
-      if (logement) {
-          const interval = setInterval(() => {
-              // Set image opacity to 0
-              const imgElement = document.querySelector('.imageCarrousel img');
-              if (imgElement) imgElement.style.opacity = 0;
-  
-              // Change the image index after the transition duration
-              setTimeout(() => {
-                  setCurrentImageIndex(prev => (prev + 1) % logement.pictures.length);
-  
-                  // Set image opacity back to 1
-                  if (imgElement) imgElement.style.opacity = 1;
-              }, 1000);  
-          }, 4500); 
-  
-          return () => clearInterval(interval);
-      }
-  }, [logement]);
 
     // Update page title
       useEffect(() => {
@@ -68,36 +42,7 @@ function Property() {
   return (
     <div>
       {/* Image carousel */}
-      <div className="imageCarrousel">
-    <img src={logement.pictures[currentImageIndex]} alt={`Logement ${currentImageIndex + 1}`} />
-    
-    {logement.pictures.length > 1 && (
-        <>
-            <button
-                onClick={() =>
-                    setCurrentImageIndex(
-                        (prev) =>
-                            (prev - 1 + logement.pictures.length) % logement.pictures.length
-                    )
-                }
-            >
-                <i className="fa-solid fa-less-than"></i>
-            </button>
-            <button
-                onClick={() =>
-                    setCurrentImageIndex(
-                        (prev) => (prev + 1) % logement.pictures.length
-                    )
-                }
-            >
-                <i className="fa-solid fa-greater-than"></i>
-            </button>
-            <p className="imageIndex">{currentImageIndex + 1}/{logement.pictures.length}</p>
-        </>
-    )}
-
-    
-</div>
+      <Carousel pictures={logement.pictures} />
 
       <div className="propertyTitleToHost">
         <div className="propertyTitleLocationTags">
@@ -118,7 +63,7 @@ function Property() {
         </div>
       </div>
 
-      <div className="collapse1and2" style={{ display: 'flex', flexDirection: 'row' }}>
+      <div className="collapse1and2">
 
   <Collapse 
     title="Description" 
