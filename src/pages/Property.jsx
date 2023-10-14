@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
 import "../styles/Property.scss";
+import { Collapse } from "../components/Collapse";
 
 
 
@@ -15,8 +16,6 @@ function Property() {
     const logement = logements.find((log) => log.id.toString() === id);
 
     // State management for visibility of description, equipment, and current image index
-    const [isDescriptionVisible, setDescriptionVisibility] = useState(false);
-    const [isEquipmentVisible, setEquipmentVisibility] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 
@@ -118,46 +117,19 @@ function Property() {
           </div>
         </div>
       </div>
-      <div className="collapse1and2">
-        <div className="collapseBtn&Content">
-          <div className="toggleBar2" onClick={() => setDescriptionVisibility((prev) => !prev)}>
-          <button
-            className="collapseBtn1"
-          >
-            Description
-          </button>
-          <p className="toggleArrow">
-    <i className={`fa-solid fa-angle-up ${isDescriptionVisible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
-</p>
-        </div>
-          <p
-            className={`collapseContent1 ${
-              isDescriptionVisible ? "active" : ""
-            }`}
-          >
-            {logement.description}
-          </p>
-        </div>
-        <div className="collapseBtn&Content">
-        <div className="toggleBar2" onClick={() => setEquipmentVisibility((prev) => !prev)}>
-          <button
-            className="collapseBtn2"
-            
-          >
-            Équipements 
-          </button>
-          <p className="toggleArrow">
-    <i className={`fa-solid fa-angle-up ${isEquipmentVisible ? "rotated" : ""}`} style={{ color: "#ffffff" }}></i>
-</p>
-        </div>
-          <ul
-            className={`collapseContent2 ${isEquipmentVisible ? "active" : ""}`}
-          >
-            {logement.equipments.map((equipment, id) => (
-              <li key={id}>{equipment}</li>
-            ))}
-          </ul>
-        </div>
+
+<div className="collapse1and2">
+  <Collapse 
+    title="Description" 
+    content={logement.description} 
+/>
+<Collapse 
+    title="Équipements" 
+    content= {logement.equipments.map((equipment, id) => (
+      <li key={id}>{equipment}</li>
+    ))} 
+/>
+
       </div>
     </div>
   );
