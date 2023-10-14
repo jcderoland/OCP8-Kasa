@@ -13,6 +13,19 @@ justify-content: center;
     padding: 30px;
 }
 
+.collapseBtn {
+    display: flex;
+    border: none;
+    background-color: #FF6060;
+    color: white;
+    font-size: 1.5rem;
+    padding: 5px;
+    max-width: 37vw;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
 .toggleBar {
     display: flex;
     justify-content: space-between;
@@ -47,10 +60,7 @@ justify-content: center;
 
 
 
-.toggleContent1,
-.toggleContent2,
-.toggleContent3,
-.toggleContent4 {
+.collapseContent {
     max-height: 0;
     width: 70vw;
     padding: 0;
@@ -62,10 +72,8 @@ justify-content: center;
     margin: 0 0 20px 0;
 }
 
-.toggleContent1.active,
-.toggleContent2.active,
-.toggleContent3.active,
-.toggleContent4.active {
+.collapseContent.active,
+{
     max-height: 500px;
     padding: 15px;
 }
